@@ -1,4 +1,4 @@
-import { CaroselContainer } from "./caroselContainer"
+import { CarouselContainer } from "./caroselContainer";
 import type { GetStaticProps, NextPage } from "next";
 import { CONTRIBUTIONS_QUERY } from "@/graphql/graphqlQueries";
 import { indexProps } from "./types/types";
@@ -10,7 +10,7 @@ import { PositionedDay } from "./types/types";
 const CaroselComponent: React.FC<indexProps> = ({ days, username }) =>{
   return(
     <div>
-      <CaroselContainer days={days} username={username}/>
+      <CarouselContainer days={days} username={username}/>
     </div>
   )
 }

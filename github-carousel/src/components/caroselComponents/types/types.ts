@@ -25,9 +25,6 @@ export type GithubSquareType = {
     date: string;
     color: string;
     contributionCount: number;
-    isNeighbor: boolean;
-    isHovered: boolean;
-    action: Dispatch<SetStateAction<PositionedDay | null>>
 }
 
 export interface PositionedDay extends contributionDay {

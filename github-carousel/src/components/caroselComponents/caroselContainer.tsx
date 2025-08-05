@@ -1,28 +1,24 @@
+// CarouselContainer.tsx
 'use client'
-import { CaroselContainerProps, contributionDay } from "./types/types"
-import React, { useState } from "react";
-import GithubSquare from "./githubSquare";
-import { PositionedDay } from "./types/types";
+import React from "react"
+import { CaroselContainerProps } from "./types/types"
+import GithubSquare from "./githubSquare"
 
-export const CaroselContainer : React.FC<CaroselContainerProps> = ({days, username}) =>{
-
-    const [hovered, setHovered] = useState<PositionedDay | null>(null);
-
-    const isNeighbor = (d: PositionedDay) => {
-        if (!hovered) return false;
-        return (
-            Math.abs(d.weekIdx - hovered.weekIdx) <= 1 &&
-            Math.abs(d.dayIdx  - hovered.dayIdx ) <= 1
-        );
-    };
-
-    return(
-        <div className="flex flex-col items-center justify-center">
-            {
-                days.map((singleDay : PositionedDay) => (
-                    <GithubSquare isHovered={hovered?.date === singleDay.date} isNeighbor={isNeighbor(singleDay)} color={singleDay.color} date={singleDay.date} contributionCount={singleDay.contributionCount} action={()=>setHovered(singleDay)}/>
-                ))
-            }
+export const CarouselContainer: React.FC<CaroselContainerProps> = ({ days }) => {
+  return (
+    <div className="overflow-hidden w-full h-40 opacity-40">
+      <div tabIndex={0} className="inline-flex animate-marquee space-x-1">
+        <div className="grid grid-rows-3 sm:grid-rows-5 md:grid-rows-7 grid-flow-col gap-1">
+          {days.map(day => (
+            <GithubSquare key={day.date} {...day} />
+          ))}
         </div>
-    )
+        <div aria-hidden className="grid grid-rows-3 sm:grid-rows-5 md:grid-rows-7 grid-flow-col gap-1">
+          {days.map(day => (
+            <GithubSquare key={day.date + "-dup"} {...day} />
+          ))}
+        </div>
+      </div>
+    </div>
+  )
 }
