@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import GithubSquare from "./githubSquare";
 import { PositionedDay } from "./types/types";
 
-export const CaroselContainer : React.FC<CaroselContainerProps> = ({day}) =>{
+export const CaroselContainer : React.FC<CaroselContainerProps> = ({days, username}) =>{
 
     const [hovered, setHovered] = useState<PositionedDay | null>(null);
 
@@ -18,7 +18,7 @@ export const CaroselContainer : React.FC<CaroselContainerProps> = ({day}) =>{
     return(
         <div className=" flex flex-col items-center justify-center">
             {
-                day.map((singleDay : PositionedDay) => (
+                days.map((singleDay : PositionedDay) => (
                     <GithubSquare isHovered={hovered?.date === singleDay.date} isNeighbor={isNeighbor(singleDay)} color={singleDay.color} date={singleDay.date} contributionCount={singleDay.contributionCount} action={()=>setHovered(singleDay)}/>
                 ))
             }

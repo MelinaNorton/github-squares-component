@@ -8,7 +8,17 @@ export interface contributionDay {
 }
 
 export type CaroselContainerProps = {
-    day : PositionedDay[]
+    days : PositionedDay[],
+    username : string
+}
+
+export interface indexProps {
+    username : string,
+    days : PositionedDay[]
+}
+
+export type graphqlFetchType = {
+    days : PositionedDay
 }
 
 export type GithubSquareType = {
