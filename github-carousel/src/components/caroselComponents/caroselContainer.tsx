@@ -1,3 +1,4 @@
+'use client'
 import { CaroselContainerProps, contributionDay } from "./types/types"
 import React, { useState } from "react";
 import GithubSquare from "./githubSquare";
@@ -16,7 +17,7 @@ export const CaroselContainer : React.FC<CaroselContainerProps> = ({days, userna
     };
 
     return(
-        <div className=" flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center">
             {
                 days.map((singleDay : PositionedDay) => (
                     <GithubSquare isHovered={hovered?.date === singleDay.date} isNeighbor={isNeighbor(singleDay)} color={singleDay.color} date={singleDay.date} contributionCount={singleDay.contributionCount} action={()=>setHovered(singleDay)}/>
