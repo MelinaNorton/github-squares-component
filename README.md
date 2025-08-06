@@ -6,10 +6,10 @@ A React component library that fetches and displays a user’s GitHub contributi
 
 ## Features
 
-* Displays **every day** of a user’s contributions calendar, including days with zero contributions
+* Displays **every day** of a user’s contributions calendar, including (but visually dampening & omitting numeric hover value) days with zero contributions
 * **Carousel navigation**: scroll through weeks or months of the calendar
 * **Hover details**: shows exact contribution count when hovering over each day cell
-* **TypeScript-ready** with bundled declarations
+* **TypeScript-ready** with bundled declarations/styles
 * **Minimal dependencies**: only React, Apollo Client, and GraphQL
 
 ---
