@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GitHub Carousel
 
-## Getting Started
+A React component library that fetches and displays a user’s GitHub contributions calendar in a sleek, navigable carousel. Built with TypeScript and Apollo Client to leverage the GitHub GraphQL API.
 
-First, run the development server:
+---
+
+## Features
+
+* Displays **every day** of a user’s contributions calendar, including days with zero contributions
+* **Carousel navigation**: scroll through weeks or months of the calendar
+* **Hover details**: shows exact contribution count when hovering over each day cell
+* **TypeScript-ready** with bundled declarations
+* **Minimal dependencies**: only React, Apollo Client, and GraphQL
+
+---
+
+## Installation
+
+Install the library and its peer dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install github-carousel react react-dom @apollo/client graphql
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+or with Yarn:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn add github-carousel react react-dom @apollo/client graphql
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Environment Variables
 
-To learn more about Next.js, take a look at the following resources:
+Your project must supply two environment variables to authenticate and identify the GitHub user:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+GITHUB_TOKEN=<your_personal_access_token>
+GITHUB_USERNAME=<your_github_username>
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Place these in a `.env` or `.env.local` file at your project root. The component will read these values at runtime to fetch the contributions calendar.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Usage
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```tsx
+'use client';
+
+import Carousel from 'github-carousel';
+
+export default function MyPage() {
+  return <Carousel />;
+}
+```
+
+No additional props are required; the component uses your `GITHUB_USERNAME` and `GITHUB_TOKEN` from environment variables.
+
+---
+
+## Development
+
+* **Build:** `npm run build` (outputs into `dist/`)
+* **Prepare:** automatically runs build on install
+* **Test locally:**
+
+  1. `npm link` in this folder
+  2. In your app: `npm link github-carousel`
+
+---
+
+## Contributing
+
+PRs and issues welcome! Please follow the [Contributor Covenant](https://www.contributor-covenant.org).
+
+---
+
+## License
+
+MIT – see the [LICENSE](LICENSE) file for details.

@@ -2,9 +2,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/app/**/*.{js,ts,jsx,tsx}",        // now scans your App-Router files
-    "./src/pages/**/*.{js,ts,jsx,tsx}",      // if you still have a pages/ folder
-    "./src/components/**/*.{js,ts,jsx,tsx}", // picks up your CarouselContainer, squares, etc.
+    // all of your own JSX/TSX so Tailwind picks up the classes you actually use
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {

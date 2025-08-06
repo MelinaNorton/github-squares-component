@@ -1,1 +1,1 @@
-{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../src/components/caroselComponents/index.tsx"],"names":[],"mappings":"AAGA,OAAO,EAAE,UAAU,EAAE,MAAM,eAAe,CAAC;AAM3C,QAAA,MAAM,gBAAgB,EAAE,KAAK,CAAC,EAAE,CAAC,UAAU,CAM1C,CAAA;AAGD,OAAO,EAAE,gBAAgB,IAAI,OAAO,EAAE,CAAA"}
+{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../src/components/caroselComponents/index.tsx"],"names":[],"mappings":"AAEA,OAAO,EAAE,UAAU,EAAE,MAAM,eAAe,CAAC;AAM3C,QAAA,MAAM,gBAAgB,EAAE,KAAK,CAAC,EAAE,CAAC,UAAU,CAM1C,CAAA;AAGD,OAAO,EAAE,gBAAgB,IAAI,OAAO,EAAE,CAAA"}

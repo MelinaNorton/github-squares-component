@@ -1,0 +1,44 @@
+/* src/styles/carousel.css */
+
+/* ----- Layout & Sizing ----- */
+.overflow-hidden { overflow: hidden; }
+.w-full         { width: 100%; }
+.h-full         { height: 100%; }
+.h-40           { height: 10rem; }    /* Tailwind’s h-40 */
+.h-4            { height: 1rem; }
+.w-4            { width: 1rem; }
+.opacity-40     { opacity: .4; }
+.opacity-20     { opacity: .2; }
+.opacity-100    { opacity: 1; }
+
+/* ----- Flex & Grid ----- */
+.inline-flex    { display: inline-flex; }
+.space-x-1 > * + * { margin-left: .25rem; }
+
+.grid           { display: grid; }
+.grid-flow-col  { grid-auto-flow: column; }
+.gap-1          { gap: .25rem; }
+
+/* 3 rows by default, then 5 @sm, 7 @md */
+.grid-rows-3    { grid-template-rows: repeat(3, 1fr); }
+@media (min-width: 640px)  { .sm\:grid-rows-5  { grid-template-rows: repeat(5, 1fr); } }
+@media (min-width: 768px)  { .md\:grid-rows-7  { grid-template-rows: repeat(7, 1fr); } }
+
+/* ----- Rounded & Hover ----- */
+.rounded-xs     { border-radius: 0.125rem; }
+.transition-transform { transition: transform .05s; }
+.duration-50    { transition-duration: .05s; }
+.hover\:cursor-pointer:hover { cursor: pointer; }
+
+/* Scale on hover */
+.hover\:scale-130:hover { transform: scale(1.3); }
+
+/* ----- Marquee Animation ----- */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 20s linear infinite; }
+
+/* ----- Breakpoint-specific utility injected via JS classes on <div> ----- */
+/* (Nothing extra needed here since the @media above handles sm: and md:) */

@@ -46,9 +46,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-import { apolloClient } from "@/graphql/graphqlClient";
-import { CONTRIBUTIONS_QUERY } from "@/graphql/graphqlQueries";
-import { CarouselContainer } from "@/components/caroselComponents/caroselContainer";
+import { apolloClient } from "../graphql/graphqlClient";
+import { CONTRIBUTIONS_QUERY } from "../graphql/graphqlQueries";
+import { CarouselContainer } from "../components/caroselComponents/caroselContainer";
 export function fetchContributions(username) {
     return __awaiter(this, void 0, void 0, function () {
         var data;

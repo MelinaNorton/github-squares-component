@@ -1,12 +1,12 @@
 import Image from "next/image";
 import type { GetStaticProps } from "next";
-import type { PositionedDay } from "@/components/caroselComponents/types/types";
+import type { PositionedDay } from "../components/caroselComponents/types/types";
 import CaroselComponent from "@/components/caroselComponents"
-import { apolloClient } from "@/graphql/graphqlClient";
-import { contributionDay } from "@/components/caroselComponents/types/types";
-import { CONTRIBUTIONS_QUERY } from "@/graphql/graphqlQueries";
-import { indexProps } from "@/components/caroselComponents/types/types";
-import { CarouselContainer } from "@/components/caroselComponents/caroselContainer";
+import { apolloClient } from "../graphql/graphqlClient";
+import { contributionDay } from "../components/caroselComponents/types/types";
+import { CONTRIBUTIONS_QUERY } from "../graphql/graphqlQueries";
+import { indexProps } from "../components/caroselComponents/types/types";
+import { CarouselContainer } from "../components/caroselComponents/caroselContainer";
 
 export async function fetchContributions(
   username: string
@@ -43,4 +43,6 @@ export default async function CarouselPage() {
 
   return <CarouselContainer days={days} username={username} />;
 }
+
+
 

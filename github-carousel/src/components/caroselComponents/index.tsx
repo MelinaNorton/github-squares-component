@@ -1,6 +1,5 @@
 import { CarouselContainer } from "./caroselContainer";
 import type { GetStaticProps, NextPage } from "next";
-import { CONTRIBUTIONS_QUERY } from "@/graphql/graphqlQueries";
 import { indexProps } from "./types/types";
 import { contributionDay } from "./types/types";
 import { GraphQLType } from "graphql";
